@@ -54,52 +54,43 @@ Let's break down this code:
 ## Code Explanation
 
 1. **Importing Required Module**
-
-    ```python
-    from mcp.server.fastmcp import FastMCP
-    ```
-
-    We import the `FastMCP` class from the MCP library, which is the main class for creating an MCP server.
+   ```python
+   from mcp.server.fastmcp import FastMCP
+   ```
+   We import the `FastMCP` class from the MCP library, which is the main class for creating an MCP server.
 
 2. **Initializing the Server**
-
-    ```python
-    mcp = FastMCP("about-me")
-    ```
-
-    Create a new MCP server instance named "about-me".
+   ```python
+   mcp = FastMCP("about-me")
+   ```
+   Create a new MCP server instance named "about-me".
 
 3. **Defining Tool Functions**
-
-    ```python
-    @mcp.tool()
-    async def get_user_name() -> str:
-    ```
-
-    - Use the `@mcp.tool()` decorator to mark this function as an MCP tool
-    - Functions are `async` because MCP server is asynchronous
-    - Use type annotations `-> str` to specify return type
+   ```python
+   @mcp.tool()
+   async def get_user_name() -> str:
+   ```
+   - Use the `@mcp.tool()` decorator to mark this function as an MCP tool
+   - Functions are `async` because MCP server is asynchronous
+   - Use type annotations `-> str` to specify return type
 
 4. **Implementing Information Retrieval**
-    - `get_user_name()`: Returns the user's name
-    - `get_user_age()`: Returns the user's age
-    - `get_user_location()`: Returns the user's location
-    - `get_user_interests()`: Returns a list of user's interests
+   - `get_user_name()`: Returns the user's name
+   - `get_user_age()`: Returns the user's age
+   - `get_user_location()`: Returns the user's location
+   - `get_user_interests()`: Returns a list of user's interests
 
 5. **Starting the Server**
-
-    ```python
-    if __name__ == "__main__":
-        mcp.run(transport='stdio')
-    ```
-
-    - Use `mcp.run()` to start the server
-    - `transport='stdio'` specifies using standard input/output for communication
+   ```python
+   if __name__ == "__main__":
+       mcp.run(transport='stdio')
+   ```
+   - Use `mcp.run()` to start the server
+   - `transport='stdio'` specifies using standard input/output for communication
 
 ## Customizing Your Information
 
 You can customize the returned values according to your needs:
-
 - Modify `get_user_name()` to return your actual name
 - Add your real interests to `get_user_interests()`
 - Update `get_user_location()` to your location
@@ -115,7 +106,6 @@ python main.py
 ## Next Steps
 
 In the next chapter, we'll learn how to:
-
 - Test the MCP server
 - Add more custom functionality
 - Handle errors and exceptions
@@ -124,12 +114,12 @@ In the next chapter, we'll learn how to:
 ## Common Issues
 
 1. **Server Won't Start?**
-    - Ensure virtual environment is activated
-    - Check all dependencies are installed
-    - Verify there are no syntax errors
+   - Ensure virtual environment is activated
+   - Check all dependencies are installed
+   - Verify there are no syntax errors
 
 2. **Function Return Type Errors?**
-    - Ensure return values match type annotations
-    - Strings use `str`
-    - Numbers use `int` or `float`
-    - Lists use `list[type]`
+   - Ensure return values match type annotations
+   - Strings use `str`
+   - Numbers use `int` or `float`
+   - Lists use `list[type]` 
