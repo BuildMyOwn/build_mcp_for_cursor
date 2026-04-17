@@ -1,0 +1,44 @@
+---
+order: 4
+title: 配置 MCP 服务器
+---
+
+# {frontmatter.title}
+
+在设置好项目之后，我们需要配置 MCP 服务器。
+
+## 步骤
+
+1. 打开项目中的 `.cursor/mcp.json` 文件
+
+2. 添加以下配置：
+
+```json
+{
+  "mcpServers": {
+    "about-me": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/Users/your_username/Code/Playground/build_mcp_for_cursor/project",
+        "run",
+        "main.py"
+      ]
+    }
+  }
+}
+```
+
+3. 保存文件并重启 Cursor
+
+## 验证配置
+
+要验证配置是否正确：
+
+1. 打开 Cursor
+2. 在设置中检查 MCP 服务器状态
+3. 你应该看到 "about-me" 服务器已连接
+
+## 下一步
+
+现在 MCP 服务器已配置完成，你可以在项目中开始使用它。

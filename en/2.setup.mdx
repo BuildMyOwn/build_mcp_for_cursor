@@ -3,7 +3,9 @@ lastChecked: 2026-03-18T03:36:16.944Z
 title: Project Setup
 ---
 
+```json
 # {frontmatter.title}
+```
 
 In this chapter, we'll learn how to set up our MCP Server project from scratch. We'll be using `uv`, a fast and modern Python package manager.
 
@@ -15,7 +17,6 @@ First, let's create a new project directory:
 # Create a new project directory
 uv init weather
 cd weather
-```
 
 ## Creating and Activating Virtual Environment
 
@@ -27,7 +28,6 @@ uv venv
 
 # Activate virtual environment
 source .venv/bin/activate
-```
 
 You'll know the virtual environment is activated when you see `(.venv)` in your command prompt.
 
@@ -38,7 +38,6 @@ Now we need to install the necessary packages:
 ```bash
 # Install MCP and HTTP client library
 uv add "mcp[cli]" httpx
-```
 
 We're installing two main packages:
 - `mcp[cli]`: The core MCP server library with command-line tools
@@ -51,7 +50,6 @@ Finally, let's create a Python file that will be our MCP server:
 ```bash
 # Create server file
 touch weather.py
-```
 
 ## Verifying the Setup
 
@@ -63,7 +61,6 @@ which python
 
 # Check installed packages
 uv pip list
-```
 
 ## Common Issues
 

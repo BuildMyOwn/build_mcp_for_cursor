@@ -1,9 +1,12 @@
 ---
+order: 3
 lastChecked: 2026-03-18T03:36:16.944Z
 title: 编写 MCP Server
 ---
 
+```json
 # {frontmatter.title}
+```
 
 在这一章中，我们将学习如何编写一个简单的 MCP Server。我们将创建一个服务器，它能够提供用户的基本信息，如姓名、年龄、位置和兴趣爱好。
 
@@ -44,7 +47,6 @@ async def get_user_interests() -> list[str]:
 if __name__ == "__main__":
     # 初始化并运行服务器
     mcp.run(transport='stdio')
-```
 
 让我们逐步解析这段代码：
 
@@ -53,20 +55,20 @@ if __name__ == "__main__":
 1. **导入必要的模块**
    ```python
    from mcp.server.fastmcp import FastMCP
-   ```
+```
    我们从 MCP 库中导入 `FastMCP` 类，这是创建 MCP 服务器的主要类。
 
 2. **初始化服务器**
    ```python
    mcp = FastMCP("about-me")
-   ```
+```
    创建一个新的 MCP 服务器实例，名称为 "about-me"。
 
 3. **定义工具函数**
    ```python
    @mcp.tool()
    async def get_user_name() -> str:
-   ```
+```
    - 使用 `@mcp.tool()` 装饰器来标记这个函数是一个 MCP 工具
    - 函数使用 `async` 关键字，因为 MCP 服务器是异步的
    - 使用类型注解 `-> str` 指定返回值类型
@@ -81,7 +83,7 @@ if __name__ == "__main__":
    ```python
    if __name__ == "__main__":
        mcp.run(transport='stdio')
-   ```
+```
    - 使用 `mcp.run()` 启动服务器
    - `transport='stdio'` 表示使用标准输入输出进行通信
 
@@ -98,4 +100,3 @@ if __name__ == "__main__":
 
 ```bash
 python main.py
-```
